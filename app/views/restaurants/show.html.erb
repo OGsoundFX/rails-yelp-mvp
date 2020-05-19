@@ -3,6 +3,7 @@
 <p><%= @restaurant.address %></p>
 
 <% @restaurant.reviews.each do |review| %>
-  <p><%= review.content %> <%= review.rating %></p>
+  <p><%= review.content %> <%= review.rating %> | <%= link_to 'delete review', review_path(review), method: :delete%> </p>
 <% end %>
 
+<p><%= link_to 'index', restaurants_path%> | <%= link_to 'rate', new_restaurant_review_path(@restaurant)%> | <%= link_to 'delete', restaurant_path(@restaurant), method: :delete%></p>
